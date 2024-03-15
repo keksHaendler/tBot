@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Messenger 1.1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon-192x192.png" type="image/x-icon">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <main id="main">
+    <div class="header">
+
+        <span class="menuButton_menu material-symbols-outlined" onclick="openNav()">chevron_right</span>
+
+        <div class="nameAndVert">
+        <div class="title_container_full">
+            <img class="profilePic" src="pp.png" alt="profile">
+            <div class="title_container">
+            <span class="appTitle">Tbot Messenger</span>
+            <p class="name">Jerry</p>
+            </div>
+        </div>
+        
+        <span class="menuButton_vert material-symbols-outlined"  onclick="openMenu()">more_vert</span>
+    </div>
+    </div>
+
+    <div id="chat-container"></div>
+
+    <div class="input-container">
+        <form class="form" onsubmit="scheduleMessage(); return false;">
+            <input class="textfield" type="text" id="textMessage" placeholder="Message">
+            <button id="demo-show-toast" class="sendButton">Senden</button>
+        </form>
+    </div>
+ 
+
+    </main>
+    <div id="modalMenu" class="modal">
+        <div class="modal-content">
+            <button class="closeButton" onclick="closeMenu()">&times;</button>
+            <p>Telegram Messenger v1.0</p>
+            <input class="textfield_2" id="idfield" type="text" placeholder="CHAT ID...">
+            <button class="Button" onclick="submitID()">Chat-ID speichern</button>
+            <button class="Button_del" onclick="clearChat()">Chatverlauf löschen</button>
+
+        </div>
+    </div>
+    
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     
+      </div>
+
+
+    
+    <script>
+       
+        function openMenu() {
+            var modal = document.getElementById("modalMenu");
+            modal.style.display = "block";
+            document.getElementById('chat-container').style.filter = "blur(2px)";
+        }
+
+        function closeMenu() {
+            var modal = document.getElementById("modalMenu");
+            modal.style.display = "none";
+            document.getElementById('chat-container').style.filter = "blur(0)";
+        }
+
+        function openNav() {
+            document.querySelector('main').style.backgroundColor = "rgba(0,0,0,0.4);"
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById('chat-container').style.filter = "blur(2px)";
+}
+
+function closeNav() {
+    document.querySelector('main').style.backgroundColor = "f2f2f2;"
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById('chat-container').style.filter = "blur(0)";
+}
+
+
+    </script>
+
+</body>
+</html>
